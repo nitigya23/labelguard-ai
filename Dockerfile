@@ -28,8 +28,8 @@ ENV PYTHONPATH=/app/backend
 # Copy built frontend assets from Stage 1 into frontend/dist
 COPY --from=frontend-builder /build/dist ./frontend/dist
 
-# Expose port 8000
+# Expose default port
 EXPOSE 8000
 
-# Seed database and start uvicorn server
-CMD ["python", "-c", "import sys; sys.path.insert(0, '/app/backend'); from app.seed_data import init_seed_data; init_seed_data(); import uvicorn; uvicorn.run('app.main:app', host='0.0.0.0', port=8000, app_dir='/app/backend')"]
+# Seed database and dynamically bind to Render's $PORT (defaults to 8000)
+CMD ["python", "-c", "import os, sys; sys.path.insert(0, '/app/backend'); from app.seed_data import init_seed_data; init_seed_data(); import uvicorn; port=int(os.environ.get('PORT', 8000)); uvicorn.run('app.main:app', host='0.0.0.0', port=port, app_dir='/app/backend')"]
