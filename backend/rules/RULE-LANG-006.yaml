@@ -1,0 +1,13 @@
+id: RULE-LANG-006
+title: EU MDR Mandatory Language Coverage
+description: Information supplied by the manufacturer for European economic area must be in official national languages of Member States.
+source: EU MDR 2017/745 Article 10(11)
+severity: CRITICAL
+check_type: language_coverage
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  eu_regions:
+    DE: "German (de)"
+    FR: "French (fr)"
+    IT: "Italian (it)"
+    ES: "Spanish (es)"

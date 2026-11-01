@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  labelguard-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: labelguard-prototype
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    restart: unless-stopped

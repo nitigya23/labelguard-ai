@@ -1,0 +1,13 @@
+id: RULE-ISO-005
+title: ISO 15223-1 Medical Device Symbols Presence
+description: Standard symbols for medical devices (consult instructions for use, lot number, serial number) must be present and legible.
+source: ISO 15223-1:2021
+severity: MEDIUM
+check_type: iso_symbols
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  mandatory_symbols:
+    - "LOT"
+    - "REF"
+    - "MD"
+    - "CONSULT_IFU"

@@ -1,0 +1,13 @@
+id: RULE-TEMP-002
+title: Storage Temperature Compliance
+description: Label storage conditions must exactly match the device product master record limits without ambiguity.
+source: ISO 15223-1:2021 Clause 5.3.7
+severity: CRITICAL
+check_type: temperature_match
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  symbol_code: "ISO-5.3.7"
+  required_fields:
+    - min_temp
+    - max_temp
+    - temp_unit

@@ -1,0 +1,11 @@
+id: RULE-EXP-004
+title: Expiration Date Format Verification
+description: Expiry date must strictly follow ISO 8601 YYYY-MM-DD or YYYY-MM format adjacent to the hourglass symbol.
+source: ISO 15223-1 Clause 5.1.4
+severity: HIGH
+check_type: expiry_format
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  allowed_patterns:
+    - "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    - "^[0-9]{4}-(0[1-9]|1[0-2])$"

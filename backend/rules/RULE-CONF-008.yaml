@@ -1,0 +1,12 @@
+id: RULE-CONF-008
+title: Master Data Conformance & Traceability
+description: All technical specifications, product model names, and serial configurations must strictly agree with the Product Master Record.
+source: ISO 13485:2016 Clause 4.2.3 / 7.5.8
+severity: CRITICAL
+check_type: master_data_conformance
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  forbidden_discrepancies:
+    - "model_name"
+    - "storage_temp"
+    - "manufacturer_name"

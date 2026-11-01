@@ -1,0 +1,12 @@
+id: RULE-STER-007
+title: Sterilization Method & Sterile Barrier Indication
+description: Sterile medical devices must state method of sterilization and single sterile barrier system symbol clearly.
+source: ISO 11607-1 / ISO 15223-1 Clause 5.2.3
+severity: HIGH
+check_type: sterile_symbol
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  valid_methods:
+    - "STERILE EO"
+    - "STERILE R"
+    - "STERILE STEAM"

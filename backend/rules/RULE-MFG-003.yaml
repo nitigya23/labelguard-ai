@@ -1,0 +1,10 @@
+id: RULE-MFG-003
+title: Legal Manufacturer Identification
+description: Name and physical address of legal manufacturer must appear accurately on all outer packaging and device labels.
+source: EU MDR 2017/745 Annex I / FDA 21 CFR 801.1
+severity: HIGH
+check_type: manufacturer_address
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  require_symbol: true
+  symbol_code: "ISO-5.1.1"

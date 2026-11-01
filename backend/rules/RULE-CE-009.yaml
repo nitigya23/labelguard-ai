@@ -1,0 +1,10 @@
+id: RULE-CE-009
+title: CE Mark & Notified Body Identification
+description: For Class IIa/IIb/III medical devices sold in the EU, the CE mark must be accompanied by the 4-digit Notified Body identification number.
+source: EU MDR 2017/745 Annex XII
+severity: CRITICAL
+check_type: ce_mark
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  require_notified_body_for_eu: true
+  min_height_mm: 5.0

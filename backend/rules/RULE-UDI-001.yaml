@@ -1,0 +1,13 @@
+id: RULE-UDI-001
+title: UDI Barcode and HRI Verification
+description: Labels must include a machine-readable UDI barcode and compliant Human Readable Interpretation (HRI) string.
+source: FDA 21 CFR 801.20 / EU MDR Annex VI
+severity: CRITICAL
+check_type: udi_presence
+disclaimer: Sample rule for demo, verify against official standards.
+parameters:
+  expected_prefix: "(01)"
+  required_on_types:
+    - carton
+    - device
+    - shipping
