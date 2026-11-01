@@ -23,3 +23,6 @@ pnpm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+
+# Dynamically generated OpenCV redline images
+backend/static/labels/redline_*.png
