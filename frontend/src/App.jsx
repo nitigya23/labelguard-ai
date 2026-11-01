@@ -208,11 +208,15 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-slate-200 py-4 px-6 text-center text-xs text-slate-500">
+      <footer className="bg-white border-t border-slate-200 py-3.5 px-6 text-center text-xs text-slate-600">
         <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
-          <span>
-            <strong>LabelGuard AI</strong> — Prototype for Tata Elxsi Teliport S4 (Case Study 4: Medical Device Labeling Automation)
-          </span>
+          <div className="flex items-center space-x-2">
+            <span className="font-bold text-[#0B2545]">LabelGuard AI</span>
+            <span>•</span>
+            <span className="text-[#0B7285] font-semibold">Tata Elxsi Teliport S4 (Case Study 4)</span>
+            <span>•</span>
+            <span className="text-slate-500">Team: <strong>Tech Titans</strong> (Kuldeep, Sakshi Kumari, Nitigya Talwar) — <em>UIET, MDU Rohtak</em></span>
+          </div>
           <span className="font-mono text-[11px] text-slate-400">
             Fictional Data Only • ISO 15223-1 / EU MDR 2017/745 / FDA 21 CFR 801
           </span>
