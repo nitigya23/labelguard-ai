@@ -26,3 +26,6 @@ Thumbs.db
 
 # Dynamically generated OpenCV redline images
 backend/static/labels/redline_*.png
+
+# Vercel
+.vercel
