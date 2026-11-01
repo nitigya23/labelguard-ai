@@ -33,6 +33,28 @@ export default function Step6AuditTrail({ onRestart }) {
     );
   });
 
+  const handleExportCsv = (e) => {
+    e.preventDefault();
+    const headers = ["Log ID", "Timestamp (UTC)", "Action Type", "Actor Name", "Actor Role", "Change Request ID", "Audit Details"];
+    const rows = logs.map(l => [
+      l.id,
+      l.timestamp,
+      `"${l.action}"`,
+      `"${l.actor_name}"`,
+      `"${l.actor_role}"`,
+      l.change_request_id || "",
+      `"${(l.details || '').replace(/"/g, '""')}"`
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "LabelGuard_Audit_Trail.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="max-w-7xl mx-auto space-y-6">
       {/* Release Confirmation Card */}
@@ -57,14 +79,13 @@ export default function Step6AuditTrail({ onRestart }) {
           </div>
 
           <div className="flex items-center space-x-3">
-            <a
-              href={AUDIT_CSV_EXPORT_URL}
-              download="LabelGuard_Audit_Trail.csv"
+            <button
+              onClick={handleExportCsv}
               className="flex items-center space-x-2 px-4 py-2.5 bg-white text-[#0B2545] hover:bg-slate-100 text-xs font-bold rounded-lg shadow-sm transition cursor-pointer"
             >
               <Download className="w-4 h-4 text-[#0B7285]" />
               <span>Export Audit Trail (CSV)</span>
-            </a>
+            </button>
 
             <button
               onClick={onRestart}
